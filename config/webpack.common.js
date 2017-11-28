@@ -11,7 +11,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
   entry: './app/client/base/index.js',
   plugins: [
-    new CleanWebpackPlugin(['../dist']),
+    new CleanWebpackPlugin([path.resolve('./dist')], {root: process.cwd()}),
     HtmlWebpackPluginConfig
   ],
   output: {
