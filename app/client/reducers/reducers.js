@@ -1,11 +1,11 @@
 const initialState = {
 };
 
-function app(state = initialState, action) {
+function appState(state = initialState, action) {
   switch (action.type) {
     default:
       return state;
   }
 }
 
-export default app;
+export default appState;

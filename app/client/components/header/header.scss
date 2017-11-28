@@ -1,0 +1,65 @@
+.pageHeader {
+  box-sizing: border-box;
+  height: 4rem;
+  padding: 0px 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #CE192C;
+
+  .rateNortheastern {
+    color: #fafafa;
+    font-weight: 300;
+    font-size: 1.75rem;
+  }
+
+  .searchForm {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .searchInput {
+    box-sizing: border-box;
+    height: 2rem;
+    width: 20rem;
+    padding: 0px 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    border-radius: 10rem;
+    background-color: #fafafa;
+    font-size: .8rem;
+  }
+
+  .searchButton {
+    height: 2rem;
+    width: 2rem;
+    margin-left: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #fafafa;
+    border: none;
+    border-radius: 10rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  nav {
+    margin-left: auto;
+  }
+
+  a {
+    color: #fafafa;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: .9rem;
+  }
+
+  .signIn {
+    margin-left: 2rem;
+  }
+}
