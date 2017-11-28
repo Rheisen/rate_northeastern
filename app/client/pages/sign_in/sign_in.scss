@@ -1,0 +1,49 @@
+.pageSignIn {
+  height: 100%;
+
+  .signInFormWrapper {
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('../../assets/images/search_section_background.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .signInForm {
+    width: 25rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+
+    h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 300;
+    }
+
+    .textInput {
+      box-sizing: border-box;
+      height: 2.5rem;
+      margin-bottom: .75rem;
+      padding: 0px 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: .8rem;
+      border: 1px solid #ccc;
+    }
+
+    .signInButton {
+      height: 2.5rem;
+      margin-top: 1.5rem;
+      background-color: #CE192C;
+      border: 1px solid #CE192C;
+      font-size: .9rem;
+      color: #fafafa;
+      cursor: pointer;
+    }
+  }
+}

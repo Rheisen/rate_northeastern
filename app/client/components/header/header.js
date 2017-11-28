@@ -1,11 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import MdSearch from 'react-icons/lib/md/search';
 
 import './header.scss';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    // this.toggleSidebar = this.toggleSidebar.bind(this);
+  }
+
   render() {
+    let HeaderNav;
+    if (this.props.user.signedIn) {
+      HeaderNav = (
+        <nav>
+          <NavLink to="/account" className={"account"}>Account</NavLink>
+        </nav>
+      );
+    } else {
+      HeaderNav = (
+        <nav>
+          <NavLink to="/sign-up" className={"signUp"}>Sign Up</NavLink>
+          <NavLink to="/sign-in" className={"signIn"}>Sign In</NavLink>
+        </nav>
+      );
+    }
+
     return (
       <header className={"pageHeader"}>
         <NavLink to={"/"}><h1 className={"rateNortheastern"}>RateNortheastern</h1></NavLink>
@@ -15,13 +37,16 @@ class Header extends React.Component {
             <MdSearch />
           </button>
         </form>
-        <nav>
-          <NavLink to="/sign-up" className={"signUp"}>Sign Up</NavLink>
-          <NavLink to="/sign-in" className={"signIn"}>Sign In</NavLink>
-        </nav>
+        {HeaderNav}
       </header>
     )
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  return {user: state.user}
+}
+
+const HeaderConnect = connect(mapStateToProps)(Header);
+
+export default HeaderConnect;
