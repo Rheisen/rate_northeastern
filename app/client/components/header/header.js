@@ -8,7 +8,6 @@ import './header.scss';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    // this.toggleSidebar = this.toggleSidebar.bind(this);
   }
 
   render() {
@@ -37,7 +36,7 @@ class Header extends React.Component {
             <MdSearch />
           </button>
         </form>
-        {HeaderNav}
+        { HeaderNav }
       </header>
     )
   }

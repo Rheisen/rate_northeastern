@@ -1,9 +1,40 @@
 .pageHome {
   height: 100%;
 
-  .searchSection {
-    height: calc(100% - 4rem);
+  .contentSection {
+    box-sizing: border-box;
+    min-height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem 2rem;
     background: url('../../assets/images/search_section_background.jpg') no-repeat;
     background-size: cover;
+  }
+
+  .contentWrapper {
+    width: 68rem;
+  }
+
+  .contentBlock {
+    float: left;
+    height: 15rem;
+    width: 15rem;
+    margin: 1rem 1rem;
+    background-color: rgba(255,255,255,.9);
+    border-radius: .2rem;
+    cursor: pointer;
+
+    h2 {
+      text-align: center;
+      font-size: 7rem;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+    }
   }
 }
