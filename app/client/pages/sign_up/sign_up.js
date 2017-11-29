@@ -45,11 +45,8 @@ class SignUp extends React.Component {
       xhttp.send();
 
     this.props.dispatch({
-      type: 'SIGN_IN_USER',
-      user: user
+      type: 'SIGN_IN_USER'
     });
-
-    console.log(this.props.user);
 
     this.setState({firstName: '', lastName: '', email: '', password: '', confPassword: ''});
   }

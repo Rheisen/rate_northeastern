@@ -6,7 +6,9 @@ const initialState = {
       lastName: null,
       email: null
     }
-  }
+  },
+  searchText: '',
+  search: []
 };
 
 function appState(state = initialState, action) {
@@ -14,9 +16,20 @@ function appState(state = initialState, action) {
     case 'SIGN_IN_USER':
       return Object.assign({}, state, {
         user: {
-          signedIn: true,
-          profile: action.user
+          signedIn: true
         }
+      });
+    case 'UPDATE_SEARCH_TEXT':
+      return Object.assign({}, state, {
+        searchText: action.text
+      });
+    case 'CLEAR_SEARCH_TEXT':
+      return Object.assign({}, state, {
+        searchText: ''
+      });
+    case 'SEARCH':
+      return Object.assign({}, state, {
+        search: action.response
       });
     default:
       return state;

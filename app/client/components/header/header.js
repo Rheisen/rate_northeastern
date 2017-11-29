@@ -3,11 +3,37 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import MdSearch from 'react-icons/lib/md/search';
 
+import { search, updateSearchText, clearSearchText } from '../../actions/search_actions';
+
 import './header.scss';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleSearchText = this.handleSearchText.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  search(text) {
+    var xhttp = new XMLHttpRequest({mozSystem: true});
+    var self = this;
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        self.props.dispatch(search(xhttp.responseText));
+      }};
+    xhttp.open("GET", "http://julianzucker.com:1234/search/type/" + text, true);
+    xhttp.send();
+  }
+
+  handleSearchText(e) {
+    this.props.dispatch(updateSearchText(e.target.value));
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.search(this.props.searchText);
+    this.props.dispatch(clearSearchText());
   }
 
   render() {
@@ -30,8 +56,13 @@ class Header extends React.Component {
     return (
       <header className={"pageHeader"}>
         <NavLink to={"/"}><h1 className={"rateNortheastern"}>RateNortheastern</h1></NavLink>
-        <form className={"searchForm"}>
-          <input type="text" className={"searchInput"} placeholder="Search RateNortheastern..." />
+        <form className={"searchForm"} onSubmit={this.handleSubmit}>
+          <input type="text"
+                 className={"searchInput"}
+                 value={this.props.searchText}
+                 onChange={this.handleSearchText}
+                 placeholder="Search RateNortheastern..."
+          />
           <button type="submit" className={"searchButton"}>
             <MdSearch />
           </button>
@@ -43,7 +74,7 @@ class Header extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {user: state.user}
+  return {user: state.user, searchText: state.searchText}
 }
 
 const HeaderConnect = connect(mapStateToProps)(Header);
