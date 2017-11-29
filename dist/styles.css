@@ -50,14 +50,113 @@
     margin-left: 2rem; }
 .pageHome {
   height: 100%; }
-  .pageHome .searchSection {
-    height: calc(100% - 4rem);
+  .pageHome .contentSection {
+    box-sizing: border-box;
+    min-height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 2rem 2rem;
     background: url(./static/1d557852a0db20a6803eeb4601ba6643.jpg) no-repeat;
     background-size: cover; }
+  .pageHome .contentWrapper {
+    width: 68rem; }
+  .pageHome .contentBlock {
+    float: left;
+    height: 15rem;
+    width: 15rem;
+    margin: 1rem 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: .2rem;
+    cursor: pointer; }
+    .pageHome .contentBlock h2 {
+      text-align: center;
+      font-size: 7rem;
+      margin-bottom: 2rem; }
+    .pageHome .contentBlock h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      text-transform: uppercase; }
 .pageNotFound .notFoundText {
   margin-top: 2rem;
   text-align: center;
   font-size: 3rem; }
+.pageSignUp {
+  height: 100%; }
+  .pageSignUp .signUpFormWrapper {
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(./static/1d557852a0db20a6803eeb4601ba6643.jpg) no-repeat;
+    background-size: cover; }
+  .pageSignUp .signUpForm {
+    width: 25rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa; }
+    .pageSignUp .signUpForm h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 300; }
+    .pageSignUp .signUpForm .textInput {
+      box-sizing: border-box;
+      height: 2.5rem;
+      margin-bottom: .75rem;
+      padding: 0px 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: .8rem;
+      border: 1px solid #ccc; }
+    .pageSignUp .signUpForm .signUpButton {
+      height: 2.5rem;
+      margin-top: 1.5rem;
+      background-color: #CE192C;
+      border: 1px solid #CE192C;
+      font-size: .9rem;
+      color: #fafafa;
+      cursor: pointer; }
+.pageSignIn {
+  height: 100%; }
+  .pageSignIn .signInFormWrapper {
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(./static/1d557852a0db20a6803eeb4601ba6643.jpg) no-repeat;
+    background-size: cover; }
+  .pageSignIn .signInForm {
+    width: 25rem;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa; }
+    .pageSignIn .signInForm h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 300; }
+    .pageSignIn .signInForm .textInput {
+      box-sizing: border-box;
+      height: 2.5rem;
+      margin-bottom: .75rem;
+      padding: 0px 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: .8rem;
+      border: 1px solid #ccc; }
+    .pageSignIn .signInForm .signInButton {
+      height: 2.5rem;
+      margin-top: 1.5rem;
+      background-color: #CE192C;
+      border: 1px solid #CE192C;
+      font-size: .9rem;
+      color: #fafafa;
+      cursor: pointer; }
 * {
   margin: 0px;
   padding: 0px;
