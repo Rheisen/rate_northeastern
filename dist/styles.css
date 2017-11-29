@@ -59,6 +59,8 @@
     padding: 2rem 2rem;
     background: url(./static/1d557852a0db20a6803eeb4601ba6643.jpg) no-repeat;
     background-size: cover; }
+  .pageHome .searchSection {
+    background-color: #fafafa; }
   .pageHome .contentWrapper {
     width: 68rem; }
   .pageHome .contentBlock {
