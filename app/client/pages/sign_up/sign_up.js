@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 import { signInUser } from '../../actions/user_actions.js';
 
 import Header from '../../components/header/header.js';
@@ -34,14 +36,20 @@ class SignUp extends React.Component {
       email: this.state.email
     };
 
-    var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest({mozSystem: true});
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        this.props.dispatch(signInUser(user));
         console.log(xhttp.responseText);
       }};
       xhttp.open("GET", "http://julianzucker.com:1234/create-account/name/" + this.state.firstName + "/password/" + this.state.password + "/email/" + this.state.email, true);
       xhttp.send();
+
+    this.props.dispatch({
+      type: 'SIGN_IN_USER',
+      user: user
+    });
+
+    console.log(this.props.user);
 
     this.setState({firstName: '', lastName: '', email: '', password: '', confPassword: ''});
   }
@@ -86,4 +94,10 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp
+function mapStateToProps(state) {
+  return {user: state.user}
+}
+
+const SignUpConnect = connect(mapStateToProps)(SignUp);
+
+export default SignUpConnect
